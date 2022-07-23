@@ -10,6 +10,10 @@ class Location extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+    ];
+
     public function parentLocation(): BelongsTo
     {
         return $this->belongsTo(related: __CLASS__);
