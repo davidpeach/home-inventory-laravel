@@ -16,6 +16,7 @@ For example, a spade could be in a shed. Or a book could be in a box, which itse
 - Locations can be relocated
 - Items can have a use by date
 - Items can be consumable
+- Notifications can be sent automatically when an item nears its use by date
 
 ## Why?
 The plan is to build the same app but with different web frameworks, for my own learning. My thought is once I have the 
