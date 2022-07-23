@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('item_variants', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('item_id')->constrained();
+            $table->string('name', 100);
+            $table->foreignId('location_id')->constrained();
+            $table->timestamp('use_by')->default(null);
+            $table->string('delete_reason', 50);
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('item_variants');
+    }
+};
